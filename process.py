@@ -10,12 +10,23 @@ log_file = open("um-server-01.txt") #this line of code creates an access key to 
 # To query for Monday, change the condition in the if statement to if day == 'Mon':
 
 
-def sales_reports(log_file):
+# def sales_reports(log_file):
+#     for line in log_file:
+#         line = line.rstrip()
+#         day = line[0:3]
+#         if day == "Mon":
+#           print(line)
+
+
+# sales_reports(log_file)
+
+def print_melon(log_file):
     for line in log_file:
         line = line.rstrip()
-        day = line[0:3]
-        if day == "Mon":
-          print(line)
+        melon_str = line[15:18]
+        melon = int(melon_str)
+        if melon > 10:
+            print(line)
 
 
-sales_reports(log_file)
+print_melon(log_file)
